@@ -81,7 +81,6 @@ class ViewRenderer {
       if (spellsTableArray[i]) {
         const newDiv = this.createDiv(`lvl-${i}-spells`)
         this.spellsBlockRef.append(newDiv)
-        console.log(`just created lvl-${i}-spells div block`) // development purpose
       }
     }
   }
@@ -100,12 +99,9 @@ class ViewRenderer {
     }
   }
 
-  renderWizard(wizard) {
-    // 1. wyprintuj imie i lvl wizarda np. "Ferumbras (lvl 3)"
+  renderNameAndLvl(wizard) {
     const nameAndLvlAsString = `${wizard.name} (lvl ${wizard.lvl})`
     this.nameAndLvlBlockRef.innerHTML = nameAndLvlAsString
-
-    // 2. osobny div dla każdego lvla spelli
   }
 }
 
@@ -117,15 +113,10 @@ const wizardGenerator = new WizardGenerator()
 function createWizard() {
   viewRenderer.clearWizard()
   
-  // 1. weź lvl z selecta
   const lvl = parseInt(viewRenderer.wizardLvlSelector.value)
-
-  // 2. używając wizardGeneratora stwórz wizarda
   const myWizard = wizardGenerator.generateWizard(lvl)
-  console.log(myWizard) // development purposes
 
-  // 3. używając viewRenderera wyprintuj wizarda
   viewRenderer.createNewDivBlocksForSpells(wizardGenerator.generateSpellsTableArray(lvl))
-  viewRenderer.renderWizard(myWizard)
+  viewRenderer.renderNameAndLvl(myWizard)
   viewRenderer.renderAllWizardSpells(myWizard.spells)
 }

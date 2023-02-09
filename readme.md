@@ -5,4 +5,3 @@
 Niech to ma możliwosć skalowania się
 
 popraw wygląd renderowania
-ogarnij gita
