@@ -72,6 +72,7 @@ class ViewRenderer {
   createDiv(id) {
     const div = document.createElement('div')
     div.id = id
+    div.className = 'single-spell-block'
     return div
   }
 
@@ -88,7 +89,11 @@ class ViewRenderer {
   renderSpellNamesForOneLvl(spellsLvl, spells) {
     const targetBlock = document.getElementById(`lvl-${spellsLvl}-spells`)
     const spellNamesAsString = spells[spellsLvl].join(", ")
-    targetBlock.innerHTML = spellNamesAsString
+    if (spellsLvl) {
+      targetBlock.innerHTML = `lvl ${spellsLvl} spells: ${spellNamesAsString}`
+    } else {
+      targetBlock.innerHTML = `cantrips: ${spellNamesAsString}`
+    }
   }
 
   renderAllWizardSpells(spells) {

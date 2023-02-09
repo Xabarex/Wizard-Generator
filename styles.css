@@ -2,3 +2,50 @@ body {
   background-color: darkslategrey;
   color: wheat;
 }
+
+
+.btn {
+  padding: 7px;
+  border-radius: 1rem;
+  border: 1px solid wheat;
+  margin: 2px;
+  font: bold;
+}
+
+.btn:active {
+  transform: translateY(4px);
+}
+
+.btn:hover {
+  transition-duration: 0.4s;
+  background-color: black;
+  
+}
+
+.btn-generate:hover {
+  color: wheat;
+}
+
+.btn-generate {
+  background-color: rgb(52, 228, 105);
+  
+}
+
+.btn-clear {
+  background-color: rgb(180, 32, 32);
+  color: wheat;
+}
+
+select {
+  margin: 5px;
+}
+
+.name-and-lvl {
+  font-size: large;
+  font-weight: bold;
+  padding: 10px 0px 5px 0px;
+}
+
+.single-spell-block {
+  padding: 5px 0px;
+}
