@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fantasy wizard generator</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="random-lib.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div>
+    <label for="lvl-select">Select wizard level: </label>
+    <select id="lvl-select">
+      <option value="1">lvl 1</option>
+      <option value="2">lvl 2</option>
+      <option value="3">lvl 3</option>
+      <option value="4">lvl 4</option>
+      <option value="5">lvl 5</option>
+      <option value="6">lvl 6</option>
+      <option value="7">lvl 7</option>
+      <option value="8">lvl 8</option>
+    </select>
+  </div>
+  
+  <div>
+    <input type="button" value="GENERATE" id="generate-button" onclick="createWizard()">
+    <input type="button" value="clear" id="clear-button" onclick="viewRenderer.clearWizard()">
+  </div>
+
+  <div id="name-and-lvl">
+
+  </div>
+
+  <div id="spells-block">
+
+  </div>
+
+</body>
+</html>
