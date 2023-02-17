@@ -1,4 +1,4 @@
-const NAMES = ['Ferumbras', "Merlin", "Ernest", "Decard Cain"]
+const NAMES = ['Ferumbras', "Merlin", "Ernest", "Decard Cain", "Thoris Druid of Elemental"]
 
 const CANTRIPS = [
   'Chill Touch', 'Control Flames', 'Fire Bolt', 'Gust', 'Light', 'Minor Illusion', 'Prestidigitation', 
