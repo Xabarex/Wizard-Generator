@@ -1,5 +1,6 @@
-const NAMES = ['Ferumbras', "Merlin", "Ernest", "Decard Cain", "Thoris Druid of Elemental"]
-
+const NAMES = [
+  'Ferumbras', "Merlin", "Ernest Galanodel", "Decard Cain", "Thoris Druid of Elemental", "Raishia", "Yennefer of Vengerberg"
+]
 const CANTRIPS = [
   'Chill Touch', 'Control Flames', 'Fire Bolt', 'Gust', 'Light', 'Minor Illusion', 'Prestidigitation', 
   'Toll the Dead', 'Shocking Grasp', 'Poison Spray'
@@ -77,9 +78,9 @@ class ViewRenderer {
   }
 
   //creates divs for spell lvls only if needed
-  createNewDivBlocksForSpells(spellsTableArray) {
-    for (let i = 0; i < spellsTableArray.length; i++) {
-      if (spellsTableArray[i]) {
+  createNewDivBlocksForSpells(wizardSpells) {
+    for (let i = 0; i < wizardSpells.length; i++) {
+      if (wizardSpells[i].length > 0) {
         const newDiv = this.createDiv(`lvl-${i}-spells`)
         this.spellsBlockRef.append(newDiv)
       }
@@ -108,6 +109,13 @@ class ViewRenderer {
     const nameAndLvlAsString = `${wizard.name} (lvl ${wizard.lvl})`
     this.nameAndLvlBlockRef.innerHTML = nameAndLvlAsString
   }
+
+  renderWizard(wizard) {
+    this.createNewDivBlocksForSpells(wizard.spells)
+    this.renderNameAndLvl(wizard)
+    this.renderAllWizardSpells(wizard.spells)
+  }
+
 }
 
 
@@ -121,7 +129,5 @@ function createWizard() {
   const lvl = parseInt(viewRenderer.wizardLvlSelector.value)
   const myWizard = wizardGenerator.generateWizard(lvl)
 
-  viewRenderer.createNewDivBlocksForSpells(wizardGenerator.generateSpellsTableArray(lvl))
-  viewRenderer.renderNameAndLvl(myWizard)
-  viewRenderer.renderAllWizardSpells(myWizard.spells)
+  viewRenderer.renderWizard(myWizard)
 }
